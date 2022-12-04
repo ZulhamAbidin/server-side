@@ -14,10 +14,18 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data', function (Blueprint $table) {
+            // $table->id();
+            // $table->string('name');
+            // $table->string('telp');
+            // $table->string('alamat');
+            // $table->timestamps();
             $table->id();
-            $table->string('name');
-            $table->string('telp');
-            $table->string('alamat');
+            $table->string('nama_lengkap');
+            $table->string('alamat_domisili');
+            $table->string('jenis_kelamin');
+            $table->string('pendidikan_terakhir');
+            $table->string('jurusan');
+            $table->date('hari');               
             $table->timestamps();
         });
     }

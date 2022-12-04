@@ -21,19 +21,18 @@ class DataController extends Controller
                 ->rawColumns(['aksi'])
                 ->make(true);
         }
-        return view('home');
+        return view('/dashboard/data/index');
     }
 
     public function store(Request $request)
     {
-        //         "nama" => "Fauziah Benamen"
-        //   "telp" => "07880707077"
-        //   "alamat" => "jl. Jalan"
-        // dd($request->all());
         $data = new Data();
-        $data->name = $request->nama;
-        $data->telp = $request->telp;
-        $data->alamat = $request->alamat;
+        $data->nama_lengkap = $request->nama_lengkap;
+        $data->alamat_domisili = $request->alamat_domisili;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->pendidikan_terakhir = $request->pendidikan_terakhir;
+        $data->jurusan = $request->jurusan;
+        $data->hari = $request->hari;
         $simpan = $data->save();
         if ($simpan) {
             return response()->json(['data' => $data, 'text' => 'data berhasi disimpan'], 200);
@@ -66,9 +65,12 @@ class DataController extends Controller
         // dd($request->all());
         $id = $request->id;
         $datas = [
-            'name' => $request->nama,
-            'telp' => $request->telp,
-            'alamat' => $request->alamat
+            'nama_lengkap' => $request->nama_lengkap,
+            'alamat_domisili' => $request->alamat_domisili,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'pendidikan_terakhir' => $request->pendidikan_terakhir,
+            'jurusan' => $request->jurusan,
+            'hari' => $request->hari,
         ];
         $data = Data::find($id);
         $simpan = $data->update($datas);

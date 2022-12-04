@@ -16,16 +16,15 @@ class DataFactory extends Factory
     {
         return [
             //  
-            // 'nama_lengkap' => $this->faker->sentence(mt_rand(1,1)),
-            // 'alamat_domisili'=> $this->faker->sentence(mt_rand(1,1)),
-            // 'jenis_kelamin' => $this->faker->sentence(mt_rand(1,1)),
-            // 'pendidikan_terakhir'=> $this->faker->sentence(mt_rand(1,1)),
-            // 'jurusan'=> $this->faker->sentence(mt_rand(1,1)),
-            // 'hari'=> $this->faker->dateTimeThisMonth('+12 days')
-            // 'pendidikan_terakhir'=> $this->faker->randomElement(['SD', 'SMP', 'SMA', 'S1', 'S2']),
-             'name' => $this->faker->sentence(mt_rand(1,1)),
-            'telp'=> $this->faker->sentence(mt_rand(1,1)),
-            'alamat' => $this->faker->sentence(mt_rand(1,1))
+            'nama_lengkap' => $this->faker->sentence(mt_rand(1,1)),
+            'alamat_domisili'=> $this->faker->sentence(mt_rand(1,1)),
+            'jenis_kelamin' => $this->faker->sentence(mt_rand(1,1)),
+            'pendidikan_terakhir'=> $this->faker->randomElement(['SD', 'SMP', 'SMA', 'S1', 'S2']),
+            'jurusan'=> $this->faker->sentence(mt_rand(1,1)),
+            'hari'=> $this->faker->dateTimeThisMonth('+12 days')
+            //  'name' => $this->faker->sentence(mt_rand(1,1)),
+            // 'telp'=> $this->faker->sentence(mt_rand(1,1)),
+            // 'alamat' => $this->faker->sentence(mt_rand(1,1))
             
 
         ];

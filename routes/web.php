@@ -16,16 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('data.index', [DataController::class, 'index'])->name('data');
+Route::get('/dashboard/data/index', [DataController::class, 'index'])->name('data')->middleware('auth');
 
-Route::post('data.store', [DataController::class, 'store'])->name('data.store');
-Route::post('data.edits', [DataController::class, 'edits'])->name('edits');
-Route::post('data.updates', [DataController::class, 'updates'])->name('updates');
+Route::post('data.store', [DataController::class, 'store'])->name('data.store')->middleware('auth');;
+Route::post('data.edits', [DataController::class, 'edits'])->name('edits')->middleware('auth');;
+Route::post('data.updates', [DataController::class, 'updates'])->name('updates')->middleware('auth');;
 Route::post('data.hapus', [DataController::class, 'hapus'])->name('hapus');
